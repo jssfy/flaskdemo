@@ -1,3 +1,5 @@
+# coding=UTF-8
+
 import click
 from flask import Flask, render_template
 from flask_login import LoginManager
@@ -85,6 +87,7 @@ def hello():
 @app.route('/user/<name>')
 def user_page(name):
     return f'User: {escape(name)}'
+# flake8 & coverage not recognizing this syntax: f'User: {escape(name)}'
 
 @app.errorhandler(404)  # 传入要处理的错误代码
 def page_not_found(e):  # 接受异常对象作为参数
